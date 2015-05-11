@@ -8,9 +8,13 @@
         else 
           echo '<li> <a href="index.php">Liste du personnel</a> </li>';
         if ($page == 'Ajout d\'un utilisateur')
-          echo '<li class="active"> <a href="Ajout.php">Ajout d\'un employé</a> </li>';
+          echo '<li class="active"> <a href="ajoutCollaborateur.php">Ajout d\'un employé</a> </li>';
         else
-          echo '<li> <a href="controllers/ajoutCollaborateur.php">Ajout d\'un employé</a> </li>';
+          echo '<li> <a href="ajoutCollaborateur.php">Ajout d\'un employé</a> </li>';
+        if ($page == 'Statistiques')
+          echo '<li class="active"> <a href="Stats.php">Statistiques</a> </li>';
+        else
+          echo '<li> <a href="Stats.php">Statistiques</a> </li>';
       ?>
     </ul>
     <form class="navbar-form navbar-right inline-form" action="search.php" method="post">

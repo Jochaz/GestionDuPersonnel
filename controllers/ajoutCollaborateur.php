@@ -12,12 +12,14 @@ else
 	$poste = $_POST['poste'];
 	$date_entree = $_POST['date_entree'];
 
-	$collection = $db->collaborateurs;
-	if ($collection->findOne({ "nom" : $nom, "prenom" : $prenom, "mail" : $email }) != null)
+	$collection = $db->Personnel;
+	$query= array("nom" => $nom, "prenom" => $prenom, "mail" => $email);
+	if ($collection->findOne($query) != null)
 	{
 		$json = '{"nom":"'.$nom.'","prenom":"'.$prenom.'","email":"'.$email.'","date_naissance":"new Date(\''.$date_naissance.'\')","embauche":{"salaire":'.$salaire.',"fonction":"'.$poste.'","date_entree":"new Date(\''.$date_entree.'\')"}}';
 		$tableau_insert = json_decode($json, true);
 		$collection->insert($tableau_insert);
+		echo 'ok';
 	}
 	
 }

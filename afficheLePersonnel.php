@@ -13,7 +13,6 @@
 		  		include('connexion.php');
 		  		$collectionPersonnel = $db->Personnel;
 	            $Personnel = $collectionPersonnel->find();
-	            $i = 0;
 	            foreach ($Personnel as $Personne) {
 		  			echo '<li onclick="window.location.href=\'fiche.php?id='.$Personne['_id'].'\';" class="list-group-item">'.$Personne['nom'].' '.$Personne['prenom'].'</li>';
 		  		}
