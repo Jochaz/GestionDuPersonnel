@@ -1,4 +1,4 @@
 <?php
 	$connexion = new MongoClient(); // Connexion sur localhost:27017
-	$db = $connexion->Personnel;
+	$db = $connexion->GestionDuPersonnel;
 ?>
