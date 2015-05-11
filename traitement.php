@@ -1,16 +1,25 @@
 <?php
 	$Login = $_POST['login'];
 	$MDP = md5($_POST['pass']);
+
 	include('connexion.php');
 
-	$collectionAdministrateur = $db->administrateurs;
-	$Administrateurs = $collectionAdministrateur->find();
+	//Recupère le contenu de la table administrateur
+	$collectionAdministrateur = $db->Administrateurs;
+
+	//Remplissage de la collection
+	$Administrateurs = $collectionAdministrateur->find();	
+
+	//Parcours de la collection
 	foreach($Administrateurs as $Administrateur){
-		if ($login == $auteur['login'] AND $MDP == md5($auteur['mdp'])){
+		//Test pour voir si la combo login/mdp est dans la base
+		if ($Login == $Administrateur['login'] AND $MDP == $Administrateur['mdp']){
 			session_start();
-			$_SESSION['login'] = $auteur['pseudo'];
-			$_SESSION['ID'] = $auteur['_id'];
-			$connecte = true;
+			//Renseignement de la supervariable $_SESSION
+			$_SESSION['login'] = $Administrateur['login'];
+			$_SESSION['ID'] = $Administrateur['_id'];
 		}
 	}
+	//Redirection
+	header('location: index.php');
 ?>
