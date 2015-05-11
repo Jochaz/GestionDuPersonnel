@@ -6,7 +6,7 @@
     //Importation de l'entete
     include('../entete.php');
     ?>
-    <body>
+    <div class="container">
         <!-- Formulaire de connexion -->
         <form method="post" action="ajoutCollaborateur.php">
             <div class="form-group">
@@ -57,5 +57,6 @@
           </div>
         </form>
     </body>
+    </div>
 </html>
 
