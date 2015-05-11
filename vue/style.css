@@ -38,3 +38,11 @@ footer{
 	padding-top : 20px;
 	text-align: center;
 }
+.list-group-item:hover{
+	background-color: #D2D7D3;
+}
+.list-group{
+	width: 50%;
+	margin:auto;
+	cursor: pointer;
+}

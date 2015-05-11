@@ -7,18 +7,22 @@
 	include('entete.php');
 	?>
 	<body>
-		<!-- Formulaire de connexion -->
-		<form method="post" action="traitement.php">
-	      
-	       <div class="input-group">
-			  <span class="input-group-addon" id="basic-addon1">Login</span>
-			  <input type="text" class="form-control" id="login" name="login" placeholder="Username" aria-describedby="basic-addon1">	      
-			  <br />	
-			  <span class="input-group-addon" id="basic-addon1">Mot de passe</span>
-			  <input type="text" class="form-control" id="pass" name="pass" placeholder="Username" aria-describedby="basic-addon1">
-			</div>
-	       <input type="submit" value="Envoyer" />
-		</form>
+		<div class="container">
+		  <h2>Connexion au module de gestion du personnel :</h2>
+		  <form class="form-inline" role="form" method="post" action="traitement.php">
+		    <div class="form-group">
+		      <label for="text">Login :</label>
+		      <input type="text" class="form-control" id="login" name="login">
+		    </div>
+		    <div class="form-group">
+		      <label for="pwd">Mot de passe:</label>
+		      <input type="password" class="form-control" id="pass" name="pass">
+		    </div>
+		    <button type="submit" class="btn btn-default">Se connecter</button>
+		  </form>
+		</div>
 	</body>
-	<?php include('footer.php'); ?>
+	<?php
+		include('footer.php'); 
+	?>
 </html>
